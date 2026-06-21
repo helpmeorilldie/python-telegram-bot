@@ -15,7 +15,7 @@ from game import (
     board_full,
 )
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("8603510237:AAFni5_cboiPIuZIR2RD6mm9RU5vsrRlCZA")
 
 games = {}
 
