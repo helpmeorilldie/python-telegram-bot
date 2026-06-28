@@ -1,1 +1,6 @@
-python-telegram-bot==20.8
+requests
+beautifulsoup4
+pyfiglet
+rich
+cfonts
+python-telegram-bot
