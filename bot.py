@@ -227,33 +227,35 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_msg = f"""
 🔐 *Iɴѕᴛᴀɢʀᴀᴍ Pᴀѕѕᴡᴏʀᴅ Rᴇѕᴇᴛ Bᴏᴛ* 🔐
 
-Yᴏᴏ.. {user.first_name}❕
+Yᴏᴏ.. {user.first_name}💐
+*Aᴄᴄᴇѕѕ Aѕ⇝* `{access_level.upper()}`
+Lᴏѕᴛ Aᴄᴄᴇѕѕ? Tᴀᴋᴇ Iᴛ Bᴀᴄᴋ❕
+Fᴀѕᴛ Aɴᴅ Sɪᴍᴘʟᴇ Aᴄᴄᴏᴜɴᴛ Rᴇᴄᴏᴠᴇʀʏ 
+Uѕɪɴɢ Oғғɪᴄɪᴀʟ Iɴѕᴛᴀɢʀᴀᴍ Pᴀѕѕᴡᴏʀᴅ
+Rᴇѕᴇᴛ Lɪɴᴋѕ Fᴏʀ..Yᴏᴜ Kɴᴏᴡ I Kɴᴏᴡ 
+Wʜᴀᴛ Kɪɴᴅѕ Oғ Aᴄᴄᴏᴜɴᴛ🥀
 
-*Your Access Level:* `{access_level.upper()}`
-
-This bot helps you reset Instagram passwords using reset links.
-
-*Commands:*
+*Cᴏᴍᴍᴀɴᴅѕ♨️*
 /reset - Start password reset process
 /help - Show this help message
 
-*How to use:*
+*Hᴏᴡ Tᴏ Uѕᴇ ?*
 1. Send /reset command
 2. Send me the Instagram password reset link
 3. Wait for the result
 
-⚠️ *Note:* Use responsibly and only on your own accounts!
+⚠️ *Nᴏᴛᴇ ‣* Uѕᴇ Rᴇѕᴘᴏɴѕɪʙʟʏ Aɴᴅ Oɴʟʏ Oɴ Yᴏᴜʀ Oᴡɴ Aᴄᴄᴏᴜɴᴛѕ!🌚
 """
     
     keyboard = [
-        [InlineKeyboardButton("🔄 Start Reset", callback_data="reset")],  # Changed to lowercase "reset"
-        [InlineKeyboardButton("❓ Help", callback_data="help")],  # Changed to lowercase "help"
-        [InlineKeyboardButton("📢 Channel", url="https://t.me/Pyunivers")]
+        [InlineKeyboardButton("🪡 Sᴛᴀʀᴛ Rᴇѕᴇᴛ", callback_data="reset")],  # Changed to lowercase "reset"
+        [InlineKeyboardButton("❓ Hᴇʟᴘ", callback_data="help")],  # Changed to lowercase "help"
+        [InlineKeyboardButton("📢 Cʜᴀɴɴᴇʟ", url="https://t.me/linksfromerebus")]
     ]
     
     # Add admin buttons if user is admin
     if access_level == "admin":
-        keyboard.append([InlineKeyboardButton("👑 Admin Panel", callback_data="admin")])  # Changed to "admin"
+        keyboard.append([InlineKeyboardButton("🎟️ Aᴅᴍɪɴ Pᴀɴɴᴇʟ", callback_data="admin")])  # Changed to "admin"
     
     reply_markup = InlineKeyboardMarkup(keyboard)
     
@@ -296,8 +298,8 @@ async def access_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(access_msg, parse_mode='Markdown')
     else:
         await update.message.reply_text(
-            "❌ You don't have access to this bot.\n"
-            "Contact @NAGIPY for access."
+            "❌ Yᴏᴜ Dᴏɴ'ᴛ Hᴀᴠᴇ Aᴄᴄᴇѕѕ Tᴏ Tʜɪѕ Bᴏᴛ.\n"
+            "Cᴏɴᴛᴀᴄᴛ @Noxmirage Fᴏʀ Aᴄᴄᴇѕѕ."
         )
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -319,32 +321,32 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     help_text = """
-*📚 Help & Instructions*
+*📚 Hᴇʟᴘ & Iɴѕᴛʀᴜᴄᴛɪᴏɴѕ*
 
-*What is this bot?*
-This bot processes Instagram password reset links to generate new passwords.
+*Wʜᴀᴛ Iѕ Tʜɪѕ Bᴏᴛ?*
+Tʜɪѕ Bᴏᴛ Pʀᴏᴄᴇѕѕᴇѕ Iɴѕᴛᴀɢʀᴀᴍ Pᴀѕѕᴡᴏʀᴅ Rᴇѕᴇᴛ Lɪɴᴋѕ Tᴏ Gᴇɴᴇʀᴀᴛᴇ Nᴇᴡ Pᴀѕѕᴡᴏʀᴅѕ.
 
-*How to get a reset link:*
-1. Go to Instagram login page
-2. Click "Forgot password"
-3. Enter username/email/phone
-4. Check your email for reset link
-5. Copy the entire link
+*Hᴏᴡ Tᴏ Gᴇᴛ A Rᴇѕᴇᴛ Lɪɴᴋ:*
+1. Gᴏ Tᴏ Iɴѕᴛᴀɢʀᴀᴍ Lᴏɢɪɴ Pᴀɢᴇ
+2. Cʟɪᴄᴋ "Fᴏʀɢᴏᴛ Pᴀѕѕᴡᴏʀᴅ"
+3. Eɴᴛᴇʀ Uѕᴇʀɴᴀᴍᴇ/Eᴍᴀɪʟ/Pʜᴏɴᴇ
+4. Cʜᴇᴄᴋ Yᴏᴜʀ Eᴍᴀɪʟ Fᴏʀ Rᴇѕᴇᴛ Lɪɴᴋ
+5. Cᴏᴘʏ Tʜᴇ Eɴᴛɪʀᴇ Lɪɴᴋ
 
-*Valid link format:*
+*Vᴀʟɪᴅ Lɪɴᴋ Fᴏʀᴍᴀᴛ:*
 https://instagram.com/accounts/password/reset/...
 
-*Commands:*
-/reset - Start password reset
-/cancel - Cancel current operation
-/help - Show this message
-/about - About the bot
+*Cᴏᴍᴍᴀɴᴅѕ:*
+/reset - Sᴛᴀʀᴛ Pᴀѕѕᴡᴏʀᴅ Rᴇѕᴇᴛ
+/cancel - Cᴀɴᴄᴇʟ Cᴜʀʀᴇɴᴛ Oᴘᴇʀᴀᴛɪᴏɴ
+/help - Sʜᴏᴡ Tʜɪѕ Mᴇѕѕᴀɢᴇ
+/about - Aʙᴏᴜᴛ Tʜᴇ Bᴏᴛ
 
-*⚠️ Disclaimer:*
-Use this tool only for recovering your own accounts. Misuse may violate Instagram's terms of service.
+*⚠️ Dɪѕᴄʟᴀɪᴍᴇʀ*
+Uѕᴇ Tʜɪѕ Tᴏᴏʟ Oɴʟʏ Fᴏʀ Rᴇᴄᴏᴠᴇʀɪɴɢ Yᴏᴜʀ Oᴡɴ Aᴄᴄᴏᴜɴᴛѕ. Mɪѕᴜѕᴇ Mᴀʏ Vɪᴏʟᴀᴛᴇ Iɴѕᴛᴀɢʀᴀᴍ'ѕ Tᴇʀᴍѕ Oғ Sᴇʀᴠɪᴄᴇ.
 """
     
-    keyboard = [[InlineKeyboardButton("🔙 Back", callback_data="back_to_start")]]
+    keyboard = [[InlineKeyboardButton("♾️ Bᴀᴄᴋ", callback_data="back_to_start")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
     if update.callback_query:
@@ -363,28 +365,28 @@ async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     about_text = """
-*🤖 About This Bot*
+*🤖 Aʙᴏᴜᴛ Tʜɪs Bᴏᴛ*
 
-*Version:* 1.0
-*Creator:* @NAGIPY
-*Channel:* @PyUnivers
+*Vᴇʀsɪᴏɴ ‣* 1.0
+*Cʀᴇᴀᴛᴏʀ ‣* @Noxmirage
+*Cʜᴀɴɴᴇʟ ‣* @ErebusRedirect
 
-*Features:*
+*Fᴇᴀᴛᴜʀᴇs❕*
 • Instagram password reset processing
 • Automatic password generation
 • Access control system
 • Admin panel for management
 • Secure handling
 
-*Note:* This bot is for educational purposes only.
+*Nᴏᴛᴇ ‣* This bot is for educational purposes only.
 Use at your own risk and responsibility.
 
-*Support:* @NAGIPY
+*Sᴜᴘᴘᴏʀᴛ ‣* @Noxmirage
 """
     keyboard = [
-        [InlineKeyboardButton("📢 Channel", url="https://t.me/xPythonTool")],
-        [InlineKeyboardButton("👤 Developer", url="https://t.me/xYourKing")],
-        [InlineKeyboardButton("🔙 Back", callback_data="back_to_start")]
+        [InlineKeyboardButton("📢 Cʜᴀɴɴᴇʟ", url="https://t.me/linksfromerebus")],
+        [InlineKeyboardButton("🎗️ Dᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/Noxmirage")],
+        [InlineKeyboardButton("♾️ Bᴀᴄᴋ", callback_data="back_to_start")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
@@ -410,13 +412,13 @@ async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     user_states[user_id] = {"state": "awaiting_link"}
     
-    keyboard = [[InlineKeyboardButton("❌ Cancel", callback_data="cancel")]]
+    keyboard = [[InlineKeyboardButton("Cᴀɴᴄᴇʟ ❌", callback_data="cancel")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
     await message.reply_text(
-        "📎 *Please send me the Instagram password reset link*\n\n"
-        "Example: `https://instagram.com/accounts/password/reset/?uidb36=...&token=...`\n\n"
-        "Send /cancel to abort.",
+        "📎 *Pʟᴇᴀsᴇ sᴇɴᴅ ᴍᴇ ᴛʜᴇ Iɴsᴛᴀɢʀᴀᴍ ᴘᴀssᴡᴏʀᴅ ʀᴇsᴇᴛ ʟɪɴᴋ*\n"
+        "Exᴀᴍᴘʟᴇ: `https://instagram.com/accounts/password/reset/?uidb36=...&token=...`\n\n"
+        "Sᴇɴᴅ /cancel ᴛᴏ ᴀʙᴏʀᴛ.",
         parse_mode='Markdown',
         reply_markup=reply_markup
     )
@@ -653,7 +655,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not has_access:
         await update.message.reply_text(
             "❌ You are not authorized to use this bot.\n"
-            "Contact @NAGIPY for access."
+            "Contact @Noxmirage  for access."
         )
         return
     
@@ -680,8 +682,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         # Send processing message
         processing_msg = await update.message.reply_text(
-            "⏳ *Processing your request...*\n"
-            "This may take a few moments.",
+            "⏳ *Pʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ...*\n"
+            "Tʜɪs ᴍᴀʏ ᴛᴀᴋᴇ ᴀ ғᴇᴡ ᴍᴏᴍᴇɴᴛs.",
             parse_mode='Markdown'
         )
         
@@ -695,24 +697,20 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             # Format success message
             success_msg = f"""
-✅ *PASSWORD RESET SUCCESSFUL* ✅
+╭──────────╮
+│ 🎫 Rᴇsᴇᴛ Sʟɪᴘ 
+╰──────────╯ 
+ ╭──────────────╮
+ │ 👤 Usᴇʀ : `{username}`
+ │ 🔑 Pᴀss : `{new_password}`
+ ╰──────────────╯
 
-━━━━━━━━━━━━━━━━━━━
-📱 *Instagram Account*
-━━━━━━━━━━━━━━━━━━━
-👤 *Username:* `{username}`
-🔑 *New Password:* `{new_password}`
-🆔 *User ID:* `{user_id_insta}`
-━━━━━━━━━━━━━━━━━━━
-
-⚠️ *Important:*
+⚠️ *Iᴍᴘᴏʀᴛᴀɴᴛ :*
 • Save this password immediately
 • Login with the new credentials
 • Change password after login if needed
 
-━━━━━━━━━━━━━━━━━━━
-🤖 Bot by @NAGIPY
-📢 Channel: @PyUnivers
+𝗕𝗬 ‣ 𝑯𝒂𝒛𝒆 
 """
             
             await processing_msg.edit_text(success_msg, parse_mode='Markdown')
