@@ -57,8 +57,8 @@ def generate_device_info():
     USER_AGENT = f"Instagram 394.0.0.46.81 Android ({random.choice(['28/9','29/10','30/11','31/12'])}; {random.choice(['240dpi','320dpi','480dpi'])}; {random.choice(['720x1280','1080x1920','1440x2560'])}; {random.choice(['samsung','xiaomi','huawei','oneplus','google'])}; {random.choice(['SM-G975F','Mi-9T','P30-Pro','ONEPLUS-A6003','Pixel-4'])}; intel; en_US; {random.randint(100000000,999999999)})"
     WATERFALL_ID = str(uuid.uuid4())
     timestamp = int(datetime.now().timestamp())
-    nums = ''.join([str(random.randint(1, 100)) for _ in range(4)])
-    PASSWORD = f'#PWD_INSTAGRAM:0:{timestamp}:Random@{nums}'
+    nums = ''.join([str(random.randint(1, 100)) for _ in range(2)])
+    PASSWORD = f'#PWD_INSTAGRAM:0:{timestamp}:Erebus@{nums}'
     return ANDROID_ID, USER_AGENT, WATERFALL_ID, PASSWORD
 
 def make_headers(mid="", user_agent=""):
@@ -172,27 +172,8 @@ def reset_instagram_password(reset_link):
 
 # Access Control Functions
 def check_access(user_id, chat_id=None):
-    """Check if user has access to use the bot"""
-    user_id_str = str(user_id)
-    chat_id_str = str(chat_id) if chat_id else None
-    
-    # Check if user is authorized
-    if user_id_str in AUTHORIZED_USERS:
-        user_data = AUTHORIZED_USERS[user_id_str]
-        # Check if access expired
-        if user_data["expiry"] and time.time() > user_data["expiry"]:
-            return False, "Your access has expired"
-        return True, user_data["access_level"]
-    
-    # Check if chat is authorized (for groups)
-    if chat_id_str and chat_id_str in AUTHORIZED_USERS:
-        user_data = AUTHORIZED_USERS[chat_id_str]
-        # Check if access expired
-        if user_data["expiry"] and time.time() > user_data["expiry"]:
-            return False, "Group access has expired"
-        return True, user_data["access_level"]
-    
-    return False, "You are not authorized to use this bot"
+    """Allow everyone to use the bot"""
+    return True, "user"
 
 def add_access(target_id, access_level="user", expiry_days=None):
     """Add user or group access"""
@@ -244,9 +225,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     welcome_msg = f"""
-🔐 *Instagram Password Reset Bot* 🔐
+🔐 *Iɴѕᴛᴀɢʀᴀᴍ Pᴀѕѕᴡᴏʀᴅ Rᴇѕᴇᴛ Bᴏᴛ* 🔐
 
-Welcome {user.first_name}!
+Yᴏᴏ.. {user.first_name}❕
 
 *Your Access Level:* `{access_level.upper()}`
 
