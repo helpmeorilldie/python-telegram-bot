@@ -40,7 +40,7 @@ J = '\033[2;36m'
 N = '\033[1;37m'
 
 # Bot configuration
-BOT_TOKEN = "8603510237:AAFni5_cboiPIuZIR2RD6mm9RU5vsrRlCZA"  # Replace with your bot token
+BOT_TOKEN = "8814247591:AAG_ecDBM7FeVgDKuMCJAkQkBhik3phJA6I"  # Replace with your bot token
 ADMIN_ID = "6592441427"  # Replace with your Telegram ID
 
 # Authorized users and groups
