@@ -199,7 +199,7 @@ def add_access(target_id, access_level="user", expiry_days=None):
     target_id_str = str(target_id)
     expiry = None
     if expiry_days:
-        expiry = time.time() + (expiry_days * 24 * 60 * 60)
+        expiry = time.time() + (expiry_days * 27 * 60 * 60)
     
     AUTHORIZED_USERS[target_id_str] = {
         "access_level": access_level,
